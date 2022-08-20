@@ -1,0 +1,11 @@
+@media all and (min-width: 1000px){
+    header{
+        max-width: 500px;
+        margin: 0 auto 4rem;
+    }
+    section{
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+}

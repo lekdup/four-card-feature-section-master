@@ -1,3 +1,15 @@
+@media all and (min-width: 1000px) {
+  header {
+    max-width: 500px;
+    margin: 0 auto 4rem;
+  }
+
+  section {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+}
 * {
   box-sizing: border-box;
   padding: 0;
@@ -9,40 +21,30 @@ body {
   font-size: 15px;
   padding: 5rem 2rem;
   background-color: #fafafa;
-  max-width: 1440px;
+  min-height: 100vh;
 }
 
 header {
   text-align: center;
   color: #4c4e61;
-  margin-bottom: 5rem;
-}
-@media all and (min-width: 1000px) {
-  header {
-    max-width: 500px;
-    margin: 0 auto 5rem;
-  }
+  margin-bottom: 4rem;
 }
 header h1 {
-  font-size: 1.6em;
   font-weight: 200;
+  font-size: 1.5rem;
+  color: #a3a5ae;
+}
+header h2 {
+  margin-bottom: 1.5rem;
 }
 header p {
   color: #a3a5ae;
-  margin-top: 1rem;
 }
 
 section {
   display: flex;
   flex-direction: column;
   gap: 1.6rem;
-}
-@media all and (min-width: 1000px) {
-  section {
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-  }
 }
 section .card {
   color: #a3a5ae;
@@ -52,11 +54,7 @@ section .card {
   border-top: 4px solid #45d3d3;
   display: flex;
   flex-direction: column;
-}
-@media all and (min-width: 1000px) {
-  section .card {
-    width: 350px;
-  }
+  max-width: 350px;
 }
 section .card__red {
   border-top: 4px solid red;

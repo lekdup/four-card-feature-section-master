@@ -1,15 +1,5 @@
-$color-primary: (
-    red: hsl(0, 78%, 62%),
-    cyan: hsl(180, 62%, 55%),
-    orange: hsl(34, 97%, 64%),
-    blue: hsl(212, 86%, 64%),
-);
-$color-neutral: (
-    very-dark-blue: hsl(234, 12%, 34%),
-    grayish-blue: hsl(229, 6%, 66%),
-    very-light-gray: hsl(0, 0%, 98%),
-    shadow: rgba(55, 61, 68, 0.24),
-);
+@import "./variables" ;
+@import "./media" ;
 
 *{
     box-sizing: border-box;
@@ -22,26 +12,23 @@ body {
     font-size: 15px;
     padding: 5rem 2rem;
     background-color: map-get($color-neutral , very-light-gray );
-    max-width: 1440px;
+    min-height: 100vh;
 }
 
 header {
     text-align: center;
     color: map-get($color-neutral, very-dark-blue);
-    margin-bottom: 5rem;
-
-    @media all and (min-width: 1000px)
-    {
-        max-width: 500px;
-        margin: 0 auto 5rem;
-    }
-    & h1{
-        font-size: 1.6em;
+    margin-bottom: 4rem;
+    h1{
         font-weight: 200;
+        font-size: 1.5rem;
+        color: map-get($color-neutral, grayish-blue )
     }
-    & p{
+    h2{
+        margin-bottom: 1.5rem;
+    }
+    p{
         color: map-get($color-neutral, grayish-blue );
-        margin-top: 1rem;
     }
 }
 // header
@@ -50,14 +37,7 @@ section {
     display: flex;
     flex-direction: column;
     gap: 1.6rem;
-
-    @media all and (min-width: 1000px)
-    {
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-    }
-    & .card{
+    .card{
         color: map-get($color-neutral , grayish-blue);
         padding: 1.5rem;
         box-shadow: 0 5px 20px map-get($color-neutral, shadow );
@@ -65,11 +45,7 @@ section {
         border-top: 4px solid map-get($color-primary ,cyan);
         display: flex;
         flex-direction: column;
-
-        @media all and (min-width: 1000px)
-        {
-            width: 350px;
-        }
+        max-width: 350px;
         &__red {
             border-top: 4px solid red;
         }
@@ -79,15 +55,15 @@ section {
         &__blue {
             border-top: 4px solid blue;
         }
-        & h3 {
+        h3 {
             color: map-get($color-neutral , very-dark-blue );
         }
-        & .image{
+        .image{
             margin-top: 1.5rem;
             align-self: flex-end;
         }
     }
-    & .mid-card {
+    .mid-card {
         display: flex;
         flex-direction: column;
         gap: 1.6rem;
