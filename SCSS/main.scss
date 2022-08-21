@@ -29,23 +29,26 @@ header {
     }
     p{
         color: map-get($color-neutral, grayish-blue );
+        font-weight: 200;
+        font-size: .7rem;
     }
 }
 // header
 
 section {
-    display: flex;
-    flex-direction: column;
+    display: grid;
     gap: 1.6rem;
     .card{
         color: map-get($color-neutral , grayish-blue);
         padding: 1.5rem;
         box-shadow: 0 5px 20px map-get($color-neutral, shadow );
         border-radius: 5px;
-        border-top: 4px solid map-get($color-primary ,cyan);
         display: flex;
         flex-direction: column;
         max-width: 350px;
+        &__cyan {
+            border-top: 4px solid map-get($color-primary ,cyan);
+        }
         &__red {
             border-top: 4px solid red;
         }

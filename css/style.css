@@ -1,13 +1,33 @@
-@media all and (min-width: 1000px) {
+@media all and (min-width: 500px) {
   header {
-    max-width: 500px;
+    max-width: 370px;
     margin: 0 auto 4rem;
   }
 
   section {
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media all and (min-width: 900px) {
+  section {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas: ". r ." "c r b" "c o b" ". o .";
     justify-content: center;
-    align-items: center;
+  }
+  section .card__cyan {
+    grid-area: c;
+  }
+  section .card__orange {
+    grid-area: o;
+  }
+  section .card__red {
+    grid-area: r;
+  }
+  section .card__blue {
+    grid-area: b;
   }
 }
 * {
@@ -39,11 +59,12 @@ header h2 {
 }
 header p {
   color: #a3a5ae;
+  font-weight: 200;
+  font-size: 0.7rem;
 }
 
 section {
-  display: flex;
-  flex-direction: column;
+  display: grid;
   gap: 1.6rem;
 }
 section .card {
@@ -51,10 +72,12 @@ section .card {
   padding: 1.5rem;
   box-shadow: 0 5px 20px rgba(55, 61, 68, 0.24);
   border-radius: 5px;
-  border-top: 4px solid #45d3d3;
   display: flex;
   flex-direction: column;
   max-width: 350px;
+}
+section .card__cyan {
+  border-top: 4px solid #45d3d3;
 }
 section .card__red {
   border-top: 4px solid red;

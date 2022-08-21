@@ -1,11 +1,36 @@
-@media all and (min-width: 1000px){
+@media all and (min-width: 500px){
     header{
-        max-width: 500px;
+        max-width: 370px;
         margin: 0 auto 4rem;
     }
-    section{
-        flex-direction: row;
+    section {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+}
+@media all and (min-width: 900px) {
+    section {
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-areas: 
+            ". r ."
+            "c r b"
+            "c o b"
+            ". o .";
         justify-content: center;
-        align-items: center;
+        .card__cyan {
+            grid-area: c;
+        }
+        .card__orange{
+            grid-area: o;
+        }
+        .card__red {
+            grid-area: r;
+        }
+        .card__blue {
+            grid-area: b;
+        }
     }
 }
